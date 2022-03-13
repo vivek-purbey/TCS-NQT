@@ -1,0 +1,27 @@
+// Using rotate() function in c++ by stl:
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cout<<"Please enter the number of test cases : ";
+    cin>>t;
+    while(t--){
+        int n, k;
+        cout<<"Please enter the value of n and k : ";
+        cin>>n>>k;
+        int arr[n];
+        cout<<"Please enter the elements of Array : ";
+        for(int i=0;i<n;i++){
+            cin>>arr[i];
+        }
+        rotate(arr, arr+(k%n), arr+n); //rotate function require three inputs:
+        //the beginning, the position by which it should be rotated, the end address of the array.
+        cout<<"After rotating Array by "<<k<<" with left : "<<endl;
+        for(int i=0;i<n;i++){
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+// Time Complexity : O(n) and Space Complexity : O(1).
