@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cout<<"Please enter number of test cases : ";
+    cin>>t;
+    while(t--){
+        int n;
+        float c, d;
+        cout<<"Please enter the size of Array : ";
+        cin>>n;
+        int a[n];
+        cout<<"Please enter the elements of Array : ";
+        for(int i=1;i<=n;i++){
+            cin>>a[i];
+        }
+        sort(a, a+n);
+        if(n%2!=0){
+        cout<<"The median of the Array : ";
+        cout<<a[(n+1)/2]<<endl;
+        }
+        if(n%2==0){
+        c=a[n/2];
+        d=a[(n/2)+1];
+        cout<<"The median of the Array : ";
+        cout<<(c+d)/2<<endl;
+        }
+    }
+    return 0;
+}
+//T.C : O(n*log(n)-for Sorting and S.C : O(1).
