@@ -1,0 +1,61 @@
+// Left Cyclic Rotation By One :
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cout<<"Please enter number of test cases : ";
+    cin>>t;
+    while(t--){
+        int n;
+        cout<<"Please enter the size of the Array : ";
+        cin>>n;
+        int a[n];
+        cout<<"Please enter the elements of Array : ";
+        for(int i=0;i<n;i++){
+            cin>>a[i];
+        }
+        cout<<"After Cyclic Left Rotation By 1 : "<<endl; //no need to iterate outer loop till k times other things are same
+        int i, first=a[0];
+        for(i=0;i<n-1;i++){
+            a[i]=a[i+1];
+        }
+        a[i]=first;
+        for(int i=0;i<n;i++){ //printing the final rotated array.
+            cout<<a[i]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+// Time Complexity : O(n) and Space Complexity : O(n)/O(d).
+<--------------------------------------------------------->
+// Right Cyclic Rotation By One :
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cout<<"Please enter number of test cases : ";
+    cin>>t;
+    while(t--){
+        int n;
+        cout<<"Please enter the size of the Array : ";
+        cin>>n;
+        int a[n];
+        cout<<"Please enter the elements of Array : ";
+        for(int i=0;i<n;i++){
+            cin>>a[i];
+        }
+        cout<<"After Cyclic Right Rotation By 1 : "<<endl; //no need to iterate outer loop till k times other things are same
+        int i, last=a[n-1];
+        for(i=n-1;i>0;i--){
+            a[i]=a[i-1];
+        }
+        a[i]=last;
+        for(int i=0;i<n;i++){ //printing the final rotated array.
+            cout<<a[i]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+// Time Complexity : O(n) and Space Complexity : O(n)/O(d).
