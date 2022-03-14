@@ -1,4 +1,4 @@
-// Using rotate() function in c++ by stl:
+// Using rotate() function in c++ by stl : 
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
@@ -25,3 +25,37 @@ int main(){
     return 0;
 }
 // Time Complexity : O(n) and Space Complexity : O(1).
+<---------------------------------------------------->
+//By a temporary vairable(more space required) : 
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cout<<"Please enter number of test cases : ";
+    cin>>t;
+    while(t--){
+        int n, k;
+        cout<<"Please enter the value of n and k : ";
+        cin>>n>>k;
+        int a[n];
+        cout<<"Please enter the elements of Array : ";
+        for(int i=0;i<n;i++){
+            cin>>a[i];
+        }
+        cout<<"Rotate the Array by "<<k<<" times towards left : "<<endl;
+        for(int i=0;i<k;i++){ //iterating k times
+            int j; //declaring outside because we need to use j outside the j loop
+            int first=a[0]; //stores the first element of the array
+            for(j=0;j<n-1;j++){
+                a[j]=a[j+1]; //shift element of array by one
+            }
+            a[j]=first; //last element of array will be added to the start of array
+        }
+        for(int i=0;i<n;i++){ //printing the final rotated array.
+            cout<<a[i]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+// Time Complexity : O(n) and Space Complexity : O(n)/O(d).
