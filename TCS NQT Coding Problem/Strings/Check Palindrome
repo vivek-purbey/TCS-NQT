@@ -1,0 +1,27 @@
+//Palindrome:
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        string s;
+        cin>>s;
+        vector<char>v1; //making two vector
+        vector<char>v2;
+        for(int i=0;i<s.size();i++){ //vector-1 store given string/number
+            v1.emplace_back(s[i]);
+        }
+        for(int i=s.size()-1;i>=0;i--){ //vector-2 store reverse of given string/number
+            v2.emplace_back(s[i]);
+        }
+        int count=0;
+        for(int i=0;i<s.size();i++){
+            if(v1[i]==v2[i]) count; //element before and after reverse same Palindrome
+            else count++; //not Palindrome
+        }
+        if(count==0) cout<<"Palindrome!"<<endl;
+        else cout<<"Not Palindrome!"<<endl;
+    }
+    return 0;
+}
