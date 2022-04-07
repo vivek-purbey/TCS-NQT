@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        string s;
+        cin>>s;
+        int count_vow=0, count_con=0;
+        for(int i=0;i<s.size();i++){
+            if(s[i]=='a' or s[i]=='e' or s[i]=='i' or s[i]=='o' or s[i]=='u') count_vow++;
+            else count_con++;
+        }
+        cout<<"Vowel = "<<count_vow;
+        cout<<" Consonant = "<<count_con<<endl;
+    }
+    return 0;
+}
